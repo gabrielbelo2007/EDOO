@@ -5,7 +5,7 @@ using namespace std;
 
 class Product{
 
-    private:
+    private: // Permite que as classes derivadas acessem esses atributos
 
         long barcode;
         string name;
@@ -13,17 +13,18 @@ class Product{
     public:
 
         Product(long barcode = 0, string name = "Default");
+        virtual ~Product();
 
         void setCode(long barcode);
-        long getCode();
-
-        void scanner();
-        void printer();
+        long getCode() const;
+        
+        /* virtual */ void scanner();
+        /* virtual */ void printer() const;
 
 };
 
-inline long Product::getCode(){
+inline long Product::getCode() const{
     return barcode;
 }
 
-#endif PRODUCT_H
+#endif

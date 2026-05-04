@@ -12,8 +12,18 @@ class PrepackedFood : public Product{
 
     public:
 
-        PrepackedFood(long barcodem, string name, long unit_price);
+        PrepackedFood(long barcode = 111, string name ="PF_Default", long unit_price = 1);
+
+        void set_unit_price(long unit_price);
+        long get_unit_price();
+
+        void scanner() /* override */;
+        void printer() const /* override */;
 
 };
+
+inline long PrepackedFood::get_unit_price(){
+    return unit_price;
+}
 
 #endif

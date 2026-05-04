@@ -17,7 +17,5 @@ int main(){
         cout << new_arr[i];
     }
 
-    
-
     return 0;
 }

@@ -27,10 +27,10 @@ class Fraction{
         friend std::ostream& operator<<(std::ostream& os, const Fraction& frac);
         friend std::istream& operator>>(std::istream& is, Fraction& frac);
 
-        Fraction operator+(long value);
-        Fraction operator-(long value);
-        Fraction operator*(long value);
-        Fraction operator/(long value);
+        Fraction operator+(const Fraction &frac) const;
+        Fraction operator-(const Fraction &frac) const;
+        Fraction operator*(const Fraction &frac) const;
+        Fraction operator/(const Fraction &frac) const;
 
         friend Fraction operator+(long value, const Fraction& frac);
         friend Fraction operator-(long value, const Fraction& frac);
