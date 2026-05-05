@@ -17,12 +17,12 @@ class Retangulo : public Forma{
         double perimetro() const;
         bool quadrado() const;
 
-        Retangulo operator+(long value) const;
-        Retangulo operator*(long value) const;
+        Retangulo operator+(const Retangulo& ret) const;
+        Retangulo operator*(double value) const;
         bool operator<(const Retangulo& ret) const;
         bool operator>(const Retangulo& ret) const;
         bool operator==(const Retangulo& ret) const;
-        Retangulo& operator*=(const Retangulo& ret);
+        Retangulo& operator*=(double value);
 
         friend ostream& operator<<(ostream& os, const Retangulo& ret);
 };

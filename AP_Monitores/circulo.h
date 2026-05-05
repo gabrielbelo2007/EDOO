@@ -12,12 +12,12 @@ class Circulo : public Forma{
         double area() const;
         double perimetro() const;
 
-        Circulo operator+(const Circulo& circ) const;
-        Circulo operator*(const Circulo& circ) const;
-        Circulo operator==(const Circulo& circ) const;
-        Circulo& operator*=(const Circulo& circ);
+        Circulo operator+(double value) const;
+        Circulo operator*(double value) const;
+        bool operator==(const Circulo& circ) const;
+        Circulo& operator*=(double value);
 
-        friend ostream& operator<<(const ostream& os, const Circulo& ret);
+        friend ostream& operator<<(ostream& os, const Circulo& ret);
 };
 
 inline double Circulo::area() const{
