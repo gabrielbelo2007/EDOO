@@ -11,6 +11,13 @@ class Circulo : public Forma{
         Circulo(const string& nome, double raio);
         double area() const;
         double perimetro() const;
+
+        Circulo operator+(const Circulo& circ) const;
+        Circulo operator*(const Circulo& circ) const;
+        Circulo operator==(const Circulo& circ) const;
+        Circulo& operator*=(const Circulo& circ);
+
+        friend ostream& operator<<(const ostream& os, const Circulo& ret);
 };
 
 inline double Circulo::area() const{

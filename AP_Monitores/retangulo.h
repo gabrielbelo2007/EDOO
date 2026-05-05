@@ -2,6 +2,7 @@
 #define RETANGULO_H
 #include "forma.h"
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Retangulo : public Forma{
@@ -15,6 +16,15 @@ class Retangulo : public Forma{
         double area() const;
         double perimetro() const;
         bool quadrado() const;
+
+        Retangulo operator+(long value) const;
+        Retangulo operator*(long value) const;
+        bool operator<(const Retangulo& ret) const;
+        bool operator>(const Retangulo& ret) const;
+        bool operator==(const Retangulo& ret) const;
+        Retangulo& operator*=(const Retangulo& ret);
+
+        friend ostream& operator<<(ostream& os, const Retangulo& ret);
 };
  
 inline double Retangulo::area() const {
