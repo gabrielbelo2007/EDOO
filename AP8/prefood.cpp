@@ -13,10 +13,11 @@ void PrepackedFood::scanner() {
 
     cout << "Digite o valor da unidade: ";
     cin >> unit_price;
+    cout << '\n';
 }
 
 void PrepackedFood::printer() const {
     Product::printer();
 
-    cout << "Valor da unidade: " << unit_price << endl;
+    cout << "Valor da unidade: " << unit_price << '\n' << endl;
 }

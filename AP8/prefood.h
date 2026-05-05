@@ -17,12 +17,17 @@ class PrepackedFood : public Product{
         void set_unit_price(long unit_price);
         long get_unit_price();
 
-        void scanner();
-        void printer() const;
+        double get_price() const override;
+        void scanner() override;
+        void printer() const override;
 
 };
 
 inline long PrepackedFood::get_unit_price(){
+    return unit_price;
+}
+
+inline double PrepackedFood::get_price() const {
     return unit_price;
 }
 

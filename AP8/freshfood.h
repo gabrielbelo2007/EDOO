@@ -20,9 +20,10 @@ class FreshFood : public Product{
         void set_price_kilo(double price_kilo);
         double get_weight();
         double get_price_kilo();
-
-        void scanner();
-        void printer() const;
+        
+        double get_price() const override;
+        void scanner() override;
+        void printer() const override;
 };
 
 inline double FreshFood::get_weight(){
@@ -31,6 +32,10 @@ inline double FreshFood::get_weight(){
 
 inline double FreshFood::get_price_kilo(){
     return price_kilo;
+}
+
+inline double FreshFood::get_price() const {
+    return weight * price_kilo;
 }
 
 #endif

@@ -13,12 +13,14 @@ class Product{
     public:
 
         Product(long barcode = 0, string name = "Default");
+        virtual ~Product();
 
         void setCode(long barcode);
         long getCode() const;
         
-        void scanner();
-        void printer() const;
+        virtual double get_price() const = 0;
+        virtual void scanner();
+        virtual void printer() const;
 
 };
 
