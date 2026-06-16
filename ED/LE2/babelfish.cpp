@@ -62,16 +62,18 @@ class Dict{
         ~Dict(){}
 
         void insert(const string& key, const string& value){
-            int index = hash(key);
-            
-            while(hash_table[index].occuped){
-                index = (index + 1) % this->size;
+
+            if(find(key) == ""){ // Verificação se elemento já foi adicionado
+                int index = hash(key);
+
+                while(hash_table[index].occuped){
+                    index = (index + 1) % this->size;
+                }
+
+                hash_table[index].key = key;
+                hash_table[index].value = value;
+                hash_table[index].occuped = true;
             }
-
-            hash_table[index].key = key;
-            hash_table[index].value = value;
-            hash_table[index].occuped = true;
-
             /*
             // Confirmando que achou posicao valida
             if(!hash_table[index].occuped){ 
