@@ -1,5 +1,6 @@
 #include <list>
 #include <vector>
+#include <stack>
 using namespace std;
 
 int main(){
@@ -26,6 +27,10 @@ int main(){
     list<int>::iterator it;
     for(it = num_lists.begin(); it != num_lists.end(); it++){}
     
+    stack<string> array_leaves;
+    array_leaves.push("test"); // Adiciona ao topo
+    array_leaves.pop(); // retira do topo
+    array_leaves.empty(); // true = vazia
 
     return 0;
 }
